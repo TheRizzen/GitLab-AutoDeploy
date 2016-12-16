@@ -14,8 +14,8 @@ app.post('/', jsonparse, function(req, res) {
   var body = req.body;
 
   config.forEach(function(elem, index) {
-    console.log(body.project.name.split('/')[2]);
-    if (elem.name == body.project.name && elem.branch == body.project.name.split('/')[2]){
+    console.log(body.project.ref.split('/')[2]);
+    if (elem.name == body.project.name && elem.branch == body.project.ref.split('/')[2]){
       var git = require('simple-git')(elem.directory);
       git.fetch(function(err, data){
         if (err == null)
