@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TheRizzen/GitLab-AutoDeploy#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "simple-git": "^1.64.0"
   }
