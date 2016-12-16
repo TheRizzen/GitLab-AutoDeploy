@@ -23,7 +23,7 @@ app.post('/', jsonparse, function(req, res) {
         else
           fs.writeFile("/var/log/gitlab-autodeploy/gitlab-autodeploy.log", "[INFO]" + data);
       });
-      git.rebase(['origin/' + elem.branch, elem.branch], function (err, data) {
+      git.rebase(function (err, data) {
         console.log('rebase: ', data);
         if (err != null)
           fs.writeFile("/var/log/gitlab-autodeploy/gitlab-autodeploy.log", "[ERROR]: " + err);
