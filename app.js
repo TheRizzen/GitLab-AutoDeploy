@@ -14,11 +14,10 @@ app.post('/', jsonparse, function(req, res) {
   var body = req.body;
 
   config.forEach(function(elem, index) {
-    console.log(body.ref.split('/')[2]);
     if (elem.name == body.project.name && elem.branch == body.ref.split('/')[2]){
       var git = require('simple-git')(elem.directory);
       git.fetch(function(err, data){
-        if (err == null)
+        if (err != null)
           fs.writeFile("/var/log/gitlab-autodeploy/gitlab-autodeploy.log", "[ERROR]: " + err);
         else
           fs.writeFile("/var/log/gitlab-autodeploy/gitlab-autodeploy.log", "[INFO]" + data);
