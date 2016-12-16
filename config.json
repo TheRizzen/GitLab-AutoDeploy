@@ -1,0 +1,11 @@
+{
+  "user": {
+    "mail": "thibault.mirandadeoliveira@epitech.eu"
+  },
+  "projects": [{
+    "name": "epitig",
+    "directory": "/srv/epitig/",
+    "branch": "master",
+    "secret token": "testig"
+  }]
+}
